@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="petStore2.Pet" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-12T12:00:20" hostname="DESKTOP-J6E41OT" time="9.157">
+<testsuite name="petStore2.Pet" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-12T13:11:31" hostname="DESKTOP-J6E41OT" time="9.155">
   <properties/>
-  <testcase name="incluirPet" classname="petStore2.Pet" time="9.157"/>
+  <testcase name="incluirPet" classname="petStore2.Pet" time="7.114"/>
+  <testcase name="consultarPet" classname="petStore2.Pet" time="1.036"/>
+  <testcase name="alterarPet" classname="petStore2.Pet" time="0.988"/>
   <system-out><![CDATA[Request method:	POST
 Request URI:	https://petstore.swagger.io/v2/pet
 Proxy:			<none>
@@ -33,7 +35,7 @@ Body:
     "status": "available"
 }
 HTTP/1.1 200 OK
-Date: Thu, 12 May 2022 12:00:26 GMT
+Date: Thu, 12 May 2022 13:11:37 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -59,6 +61,104 @@ Server: Jetty(9.2.9.v20150224)
         }
     ],
     "status": "available"
+}
+Request method:	GET
+Request URI:	https://petstore.swagger.io/v2/pet/240220172402
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Thu, 12 May 2022 13:11:40 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 240220172402,
+    "category": {
+        "id": 1,
+        "name": "Dog"
+    },
+    "name": "Carlao",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022,
+            "name": "vacinado"
+        }
+    ],
+    "status": "available"
+}
+Request method:	PUT
+Request URI:	https://petstore.swagger.io/v2/pet
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "id": 240220172403,
+    "category": {
+        "id": 1,
+        "name": "Dog"
+    },
+    "name": "Carlitos",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022,
+            "name": "vacinado"
+        }
+    ],
+    "status": "sold"
+}
+HTTP/1.1 200 OK
+Date: Thu, 12 May 2022 13:11:41 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 240220172403,
+    "category": {
+        "id": 1,
+        "name": "Dog"
+    },
+    "name": "Carlitos",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 2022,
+            "name": "vacinado"
+        }
+    ],
+    "status": "sold"
 }
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

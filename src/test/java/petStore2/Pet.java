@@ -7,7 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.contains;
 
 public class Pet {
     String uri = "https://petstore.swagger.io/v2/pet";
@@ -17,7 +19,7 @@ public class Pet {
         return new String(Files.readAllBytes(Paths.get(caminhoJson)));
     }
 
-    @Test
+    @Test(priority = 1)
     public void incluirPet() throws IOException {
         String jsonBody = lerJson("db/pet1.json");
 
@@ -32,6 +34,42 @@ public class Pet {
                 .statusCode(200)
                 .body("name", is ("Carlao"))
                 .body("status", is("available"))
+                .body("category.name", is ("Dog"))
+        ;
+    }
+   @Test(priority = 2)
+    public void consultarPet(){
+        String petId = "240220172402";
+
+        given()
+                .contentType("application/json")
+                .log().all()
+        .when()
+                .get(uri + "/" + petId)
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("name", is ("Carlao"))
+                .body("category.name", is ("Dog"))
+                .body("status", is ("available"))
+        ;
+    }
+   @Test(priority = 3)
+    public void alterarPet() throws IOException {
+        String jsonBody = lerJson("db/pet2.json");
+
+        given()
+                .contentType("application/json")
+                .log().all()
+                .body(jsonBody)
+        .when()
+                .put(uri)
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("name", is ("Carlitos"))
+                .body("status", is ("sold"))
+                .body("category.name", is ("Dog"))
         ;
     }
 }
