@@ -31,7 +31,7 @@
     "status": "available"
 }
 HTTP/1.1 200 OK
-%Date: Thu, 12 May 2022 13:11:37 GMT
+%Date: Thu, 12 May 2022 13:29:49 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -73,7 +73,7 @@
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-%Date: Thu, 12 May 2022 13:11:40 GMT
+%Date: Thu, 12 May 2022 13:29:52 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -135,7 +135,7 @@
     "status": "sold"
 }
 HTTP/1.1 200 OK
-%Date: Thu, 12 May 2022 13:11:41 GMT
+%Date: Thu, 12 May 2022 13:29:54 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -164,3 +164,30 @@
     ],
     "status": "sold"
 }
+Request method:	DELETE
+>Request URI:	https://petstore.swagger.io/v2/pet/240220172402
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+#				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+%Date: Thu, 12 May 2022 13:29:54 GMT
+ Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+ Access-Control-Allow-Origin: *
+6Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+DAccess-Control-Allow-Headers: Content-Type, api_key, Authorization
+ Server: Jetty(9.2.9.v20150224)
+
+{
+    "code": 200,
+    "type": "unknown",
+    "message": "240220172402"
+}
